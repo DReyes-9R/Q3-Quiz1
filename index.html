@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operators</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="transparent-container text-center">
+            <h1>JavaScript Operators</h1>
+            <p class="given-text">Given: A = 24.18 and B = 7.18, compute the following:</p>
+            <div class="row">
+                <div class="operator-container">
+                <div class="operator-box">
+                        <h3>Arithmetic Operators</h3>
+                        <p>Exponent: <span id="exponent" class="hidden"></span></p>
+                        <p>Modulus: <span id="modulus" class="hidden"></span></p>
+                        <button class="btn btn-primary" onclick="showArithmetic()">Show Answer</button>
+                    </div>
+                    <div class="operator-box">
+                        <h3>Comparison Operators</h3>
+                        <p>Is 10.77 greater than 5.89? <span id="greater" class="hidden"></span></p>
+                        <p>Is 30.22 equal to 6.78? <span id="equal" class="hidden"></span></p>
+                        <button class="btn btn-primary" onclick="showComparison()">Show Answer</button>
+                    </div>
+                    <div class="operator-box">
+                        <h3>Logical Operators</h3>
+                            <p>(A <= B) OR (A >= B): <span id="logical1" class="hidden"></span></p>
+                            <p>(A != B) AND (A == B): <span id="logical2" class="hidden"></span></p>
+                        <button class="btn btn-primary" onclick="showLogical()">Show Answer</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-warning mt-3" onclick="location.reload()">Refresh</button>
+        </div>
+    </div>
+
+    <script>
+        let A = 24.18;
+        let B = 7.18;
+
+        function showArithmetic() {
+            document.getElementById('exponent').innerText = Math.pow(A, B).toFixed(2);
+            document.getElementById('modulus').innerText = (A % B).toFixed(2);
+            document.getElementById('exponent').classList.remove('hidden');
+            document.getElementById('modulus').classList.remove('hidden');
+        }
+
+        function showComparison() {
+            document.getElementById('greater').innerText = (10.77 > 5.89);
+            document.getElementById('equal').innerText = (30.22 == 6.78);
+            document.getElementById('greater').classList.remove('hidden');
+            document.getElementById('equal').classList.remove('hidden');
+        }
+
+        function showLogical() {
+            document.getElementById('logical1').innerText = (A <= B || A >= B);
+            document.getElementById('logical2').innerText = (A != B && A == B);
+            document.getElementById('logical1').classList.remove('hidden');
+            document.getElementById('logical2').classList.remove('hidden');
+        }
+    </script>
+
+<footer class="footer">
+    <p> A.Y. 2024-2025 | David Miguel A. Reyes | Grade 9-Ruby</a></p>
+</footer>
+
+
+
+
+</body>
+</html>
